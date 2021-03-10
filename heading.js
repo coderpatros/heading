@@ -1,6 +1,12 @@
 var headingElement = document.getElementById("heading");
 
 window.addEventListener("deviceorientation", function(event) {
-    headingElement.innerText = event.alpha + "   " + event.beta + "   " + event.gamma;
-
+    if (event.webkitCompassHeading !== undefined)
+    {
+        headingElement.innerText = event.webkitCompassHeading;
+    }
+    else
+    {
+        headingElement.innerText = event.alpha;
+    }
 }, true);
