@@ -1,10 +1,6 @@
-function updateHeading(heading) {
-    if (heading != null && heading != NaN)
-    {
-        document.getElementById("heading").innerText = heading;
-    }
-}
+var headingElement = document.getElementById("heading");
 
-const watchID = navigator.geolocation.watchPosition((position) => {
-    updateHeading(position.coords.heading);
-});
+window.addEventListener("deviceorientation", function(event) {
+    headingElement.innerText = event.alpha + "   " + event.beta + "   " + event.gamma;
+
+}, true);
