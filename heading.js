@@ -1,5 +1,7 @@
 var headingElement = document.getElementById("heading");
 
+headingElement.innerText = "Loading";
+
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function(event) {
         if (event.webkitCompassHeading !== undefined)
