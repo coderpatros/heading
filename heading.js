@@ -12,8 +12,6 @@ if (window.DeviceOrientationEvent) {
         {
             headingElement.textContent = event.alpha;
         }
-
-        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
     }, true);
 }
 else {
