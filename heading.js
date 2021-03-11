@@ -1,21 +1,21 @@
 var headingElement = document.getElementById("heading");
 
-headingElement.innerText = "Loading";
+headingElement.textContent = "Loading";
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function(event) {
         if (event.webkitCompassHeading !== undefined)
         {
-            headingElement.innerText = event.webkitCompassHeading;
+            headingElement.textContent = event.webkitCompassHeading;
         }
         else
         {
-            headingElement.innerText = event.alpha;
+            headingElement.textContent = event.alpha;
         }
 
         handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
     }, true);
 }
 else {
-    headingElement.innerText = "No DeviceOrientationEvent";
+    headingElement.textContent = "No DeviceOrientationEvent";
 }
